@@ -7,6 +7,13 @@ If you'd like to support the original author, you can donate by clicking "Sponso
 
 You can donate from $1 to $15 and any donation will be used to keep support the authors work.
 
+# Prerequsites
+
+You must first have the latest version installed having restarted your PC earlier and get the latest updates using the "Settings" tab.
+
+[Download the Epic Games Launcher From the Epic Games Store](https://store.epicgames.com/en-US/download)
+
+
 # Usage
 To use:
 - Simply download [LightmassConfiguration.zip](https://github.com/sgeraldes/LightmassConfiguration/archive/master.zip) and decompress to any folder (empty is better)
@@ -20,6 +27,8 @@ It currently works with Unreal Engine 5.3.2, but can easily adapted for ther ver
 # Requirements
 - Windows 10 (not tested in earlier versions) Windows 11, Windows 7 and Windows 8 are not currently supported 
 - Admin privileges
+
+- The latest Nvidia drivers versions R525 U3 (528.02)
 
 # Features
 The script has the following features:
@@ -40,14 +49,23 @@ The script has the following features:
         
     If UnrealEd is running, the script will disable the option to change GPU and CPU lightmass as it needs to access files that are in use to do so.
 
-Please note: The script will give an error while copying when trying to change the quality settings with Unreal Ed running. That's perfectly fine, the file is just been copied over to be sure it remains the same. I guess I could just copy GPULightmassKernel.dll instead of the whole bunch, but I just think it works as-is just fine. The copy of a single will fail but GPU Lightmass will work the same.
+Please note: The script will give an error while copying when trying to change the quality settings with Unreal Ed running. That's perfectly fine, the file is just been copied over to be sure it remains the same. 
+
 
 Also note: the script can't change from CPU to GPU lightmass while the Unreal Editor is running, so the script will check for that and disable the option accordingly.
 
-The only file that has the changes for quality, and the only file that is in any way different between the different packs, is GPULightmassKernel.dll (I did a binary compare of each file to be sure).
+
 
 # Updates
+
+UPDATE 1st November 2023 Announcement for Unreal Engine 5.3 from Epic Games Launcher posted on Unreal Engine Forum on
+
+[Luoshuang’s GPULightmass thread](https://forums.unrealengine.com/t/luoshuangs-gpulightmass/109474/2489)
+
+
 UPDATE 17th November 2023 updates for 5.3.2 by [jimshalo10 aka Jimbohalo10](https://forums.unrealengine.com/u/Jimbohalo10)
+
+
 
 UPDATE 06/03/2020 Updated to 4.24.1
 
