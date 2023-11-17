@@ -1,9 +1,10 @@
 # LightmassConfiguration
-LightmassConfiguration is a script made for Unreal Engine 4 to allow to change from Unreal's CPU Lightmass to GPU Lightmass (made by Luoshuang for the Unreal Forums) and back. Since there are no options in GPU Lightmass, the script also allows anyone to change bake quality levels without the need to even restart Unreal Editor. 
+LightmassConfiguration is a script made for Unreal Engine 5 to allow to change from Unreal's CPU Lightmass to GPU Lightmass (made by Luoshuang for the Unreal Forums) and back. Since there are no options in GPU Lightmass, the script also allows anyone to change bake quality levels without the need to even restart Unreal Editor. 
 
-If you'd like to support my work, you can donate by clicking "Sponsor" on the top or directly in my patreon page here: https://www.patreon.com/LightmassConfigurator
+# This version comes from the original work at  
+If you'd like to support the original author, you can donate by clicking "Sponsor" on the top or directly on sgeraldes patreon page here: https://www.patreon.com/LightmassConfigurator
 
-You can donate from $1 to $15 and any donation will be used to keep this script up-to-date.
+You can donate from $1 to $15 and any donation will be used to keep support the authors work.
 
 # Usage
 To use:
@@ -11,12 +12,12 @@ To use:
 - Double-click LightmassConfigurator.bat, it will ask for admin permissions and do the rest, including downloading GPU Lightmass to the proper folder, prompting you each step of the way
 
 # Background and use case
-I had to install GPU lightmass 4.20.1 on more than 10 computers, so I made a script that will perform a batch of checks and allow to change from GPU bake quality without the need to restart Unreal. It will also check quite a few other things. Hope it helps someone.
+I made a script that will perform a batch of checks and allow to change from GPU bake quality without the need to restart Unreal. It will also check quite a few other things. Hope it helps someone.
 
-It currently works with Unreal Engine 4.20, but can easily adapted for 4.19.x if needed.
+It currently works with Unreal Engine 5.3.2, but can easily adapted for ther versions if needed.
 
 # Requirements
-- Windows 10 (not tested in earlier versions, may work but no guarantees)
+- Windows 10 (not tested in earlier versions) Windows 11, Windows 7 and Windows 8 are not currently supported 
 - Admin privileges
 
 # Features
@@ -45,6 +46,7 @@ Also note: the script can't change from CPU to GPU lightmass while the Unreal Ed
 The only file that has the changes for quality, and the only file that is in any way different between the different packs, is GPULightmassKernel.dll (I did a binary compare of each file to be sure).
 
 # Updates
+UPDATE 17th November 2023 updates for 5.3.2
 UPDATE 06/03/2020 Updated to 4.24.1
 
 UPDATE 12/11/2018 v0.3.2: Updated to work with Unified settings for UnrealEd 4.21 and 4.21.1. Updated minimum Nvidia GPU Driver Version to 411.31
