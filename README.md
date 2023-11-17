@@ -9,9 +9,11 @@ You can donate from $1 to $15 and any donation will be used to keep support the 
 
 # Prerequsites
 
+[Download the Epic Games Launcher From the Epic Games Store](https://store.epicgames.com/en-US/download)
+
 You must first have the latest version installed having restarted your PC earlier and get the latest updates using the "Settings" tab.
 
-[Download the Epic Games Launcher From the Epic Games Store](https://store.epicgames.com/en-US/download)
+
 
 
 # Usage
