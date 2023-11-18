@@ -3,7 +3,11 @@ LightmassConfiguration is a script made for Unreal Engine 5 to allow to change f
 
 This version comes from the original work at  [LightmassConfiguration Unreal 4.*](https://github.com/sgeraldes/LightmassConfiguration)
 
-If you'd like to support the original author, you can donate by clicking "Sponsor" on the top or directly on sgeraldes patreon page here: https://www.patreon.com/LightmassConfigurator
+If you'd like to support the original author, you can donate by going to the code at 
+
+ [LightmassConfiguration Unreal 4.*](https://github.com/sgeraldes/LightmassConfiguration)
+
+clicking "Sponsor" on the top or directly on sgeraldes patreon page here: https://www.patreon.com/LightmassConfigurator
 
 You can donate from $1 to $15 and any donation will be used to keep support the authors work.
 
