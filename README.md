@@ -22,8 +22,18 @@ You must first have the latest version installed having restarted your PC earlie
 
 # Usage
 To use:
-- Simply download [LightmassConfiguration.zip](https://github.com/sgeraldes/LightmassConfiguration/archive/master.zip) and decompress to any folder (empty is better)
+
+Unreal 5.3
+
+Simply download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
+and decompress to any folder (empty is better)
+
 - Double-click LightmassConfigurator.bat, it will ask for admin permissions and do the rest, including downloading GPU Lightmass to the proper folder, prompting you each step of the way
+
+
+original Unreal 4-
+
+Simply download [LightmassConfiguration.zip](https://github.com/sgeraldes/LightmassConfiguration/archive/master.zip) and decompress to any folder (empty is better)
 
 # Background and use case
 I made a script that will perform a batch of checks and allow to change from GPU bake quality without the need to restart Unreal. It will also check quite a few other things. Hope it helps someone.
@@ -31,7 +41,7 @@ I made a script that will perform a batch of checks and allow to change from GPU
 It currently works with Unreal Engine 5.3.2, but can easily adapted for ther versions if needed.
 
 # Requirements
-- Windows 10 (not tested in earlier versions) Windows 11, Windows 7 and Windows 8 are not currently supported 
+- Windows 10 (not tested in other versions) Windows 11, Windows 7 and Windows 8 are not currently supported 
 - Admin privileges
 
 - The latest Nvidia drivers versions R525 U3 (528.02)
