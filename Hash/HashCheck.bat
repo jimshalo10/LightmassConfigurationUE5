@@ -31,12 +31,12 @@ SET cSOFT=[90m
 
 :MAIN
 REM Use UnrealVersion=Any to autodetect installed versions and offer to change versions
-set UnrealVersion=4.26
+set UnrealVersion=5.3
 ECHO UnrealVersion=!UnrealVersion! >test.txt
 REM REGISTRY SETTINGS
 set KEY_NAME=HKLM\Software\EpicGames\Unreal Engine\%UnrealVersion%
 set VALUE_NAME=InstalledDirectory
-SET pathUnrealEd=Engine\Binaries\Win64\UE4Editor-UnrealEd.dll
+SET pathUnrealEd=Engine\Binaries\Win64\UnrealEditor-UnrealEd.dll
 SET pathGPULightmass=Engine\Binaries\Win64\GPULightmassKernel.dll
 
 CALL :GETINSTALLPATH
@@ -117,6 +117,18 @@ CALL :UNZIP
 
 set UnrealVersion=4.26.2
 set uGPULightmass=%uGPULightmass4262%
+CALL :DOWNLOAD
+CALL :UNZIP
+
+REM Add support for 5.3.1
+set UnrealVersion=5.3.1
+set uGPULightmass=%uGPULightmass531%
+CALL :DOWNLOAD
+CALL :UNZIP
+
+REM Add support for 5.3.2
+set UnrealVersion=5.3.2
+set uGPULightmass=%uGPULightmass531%
 CALL :DOWNLOAD
 CALL :UNZIP
 
