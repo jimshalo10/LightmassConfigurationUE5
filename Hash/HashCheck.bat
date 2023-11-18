@@ -16,6 +16,9 @@ set uGPULightmass4254=https://dl.orangedox.com/7fPK2NJ1Jmx3s8Gtv5?dl=1
 set uGPULightmass426=https://dl.orangedox.com/KAsDFVpPgoRHoXXtsJ?dl=1
 set uGPULightmass4261=https://dl.orangedox.com/RiBB5lkdyBuxsXJpNH?dl=1
 set uGPULightmass4262=https://dl.orangedox.com/6wS2UhrnsHeFEsZAIp?dl=1
+REM Unreal 5
+set uGPULightmass531=https://github.com/jimshalo10/GPULightmass-5-3-1-BIN-patch/archive/refs/heads/GPULightmass-5-3-BIN-patch.zip
+set uGPULightmass532=https://github.com/jimshalo10/GPULightmass-5-3-1-BIN-patch/archive/refs/heads/GPULightmass-5-3-BIN-patch.zip
 
 REM CONSOLE COLORS AND MESSAGES
 SET mERROR=[31m[7mERRO[0m: 
