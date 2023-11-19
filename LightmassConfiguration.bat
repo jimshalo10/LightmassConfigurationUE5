@@ -57,7 +57,7 @@ set sScriptVersion=v0.3.5
 REM 4.20 requires NVIDIA DRIVER VERSION 398.26 or later required. 
 set iMinDriverVersion_420=2421139826
 REM 4.21 requires NVIDIA DRIVER VERSION 411.31 or later required. 
-set iMinDriverVersion_521=2421152123
+set iMinDriverVersion_521=2421141131
 
 REM Remove dots from Version Variable
 set uVersion=%UnrealVersion:.=% 
