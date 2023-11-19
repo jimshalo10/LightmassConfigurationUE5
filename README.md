@@ -24,8 +24,12 @@ You must first have the latest version installed having restarted your PC earlie
 To use:
 
 Unreal 5.3
-
+Win RAR decompressor
 Simply download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
+
+Windows Explorer decompressor (more complex)
+
+Download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
 If you use Windows Explorer decompress. Right click on the file in Downloads directory "LightmassConfigurationUE5-master.zip" Select "Properties"
 
 In the new box at the botto tick the box marked "Unblock", the click "Apply" then click "Ok"
