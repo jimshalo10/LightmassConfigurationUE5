@@ -51,7 +51,9 @@ REM ...................................................................
 REM DO NOT CHANGE ANYTHING FROM HERE UNLESS YOU KNOW WHAT YOU ARE DOING
 REM ...................................................................
 REM 
-set sScriptVersion=v0.3.4
+REM set sScriptVersion=v0.3.4 was last Unreal Engine 4
+REM Unreal 5 sScriptVersion=v0.3.5
+set sScriptVersion=v0.3.5
 REM 4.20 requires NVIDIA DRIVER VERSION 398.26 or later required. 
 set iMinDriverVersion_420=2421139826
 REM 4.21 requires NVIDIA DRIVER VERSION 411.31 or later required. 
