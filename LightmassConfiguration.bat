@@ -10,7 +10,7 @@ set UnrealVersion=5.3
 
 REM VARIABLE: pUnified. The name of the file that's going to be downloaded for this version
 REM DEFAULT: set pUnified=GPULightmass-UE4.24.1.zip
-set pUnified=GPULightmass-UE5.3.2-release.zip
+set pUnified=GPULightmass-5-3-BIN-patch.zip
 
 REM Download URLS can be modified. This URLs contian the GPU Lightmass for a particular version.
 set u7ZIP=https://www.7-zip.org/a/7za920.zip
@@ -80,7 +80,7 @@ SET cGREEN=[32m
 SET cSOFT=[90m
 SET cYellow=[93m
 SET cInverted=[7m
-
+REM WRONG!!!! below
 SET pUnrealEd=\Engine\Binaries\Win64\UE4Editor-UnrealEd.dll
 SET pGPULightmass=\Engine\Binaries\Win64\GPULightmassKernel.dll
 
