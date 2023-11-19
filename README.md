@@ -29,6 +29,8 @@ Unreal 5.3
 
 Simply download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
 
+Right click select WinRAR "Extract to LightmassConfigurationUE5-master"
+
 **Windows Explorer decompressor (more complex)**
 
 Download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
