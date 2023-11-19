@@ -1,4 +1,4 @@
-@ECHO OFF
+@ECHO one
 SETLOCAL EnableExtensions ENABLEDELAYEDEXPANSION
 
 :Variables
@@ -55,13 +55,13 @@ set sScriptVersion=v0.3.4
 REM 4.20 requires NVIDIA DRIVER VERSION 398.26 or later required. 
 set iMinDriverVersion_420=2421139826
 REM 4.21 requires NVIDIA DRIVER VERSION 411.31 or later required. 
-set iMinDriverVersion_421=2421141131
+set iMinDriverVersion_521=2421152123
 
 REM Remove dots from Version Variable
 set uVersion=%UnrealVersion:.=% 
 
 If %uVersion% GTR 420 (
-	set iMinDriverVersion=%iMinDriverVersion_421%
+	set iMinDriverVersion=%iMinDriverVersion_521%
 ) ELSE (
 	set iMinDriverVersion=%iMinDriverVersion_421%
 )
@@ -512,4 +512,5 @@ EXIT /B 1
 ECHO.
 ECHO ALL DONE. Have a good day!
 TIMEOUT 3 >nul
+pause 
 EXIT /B 0
