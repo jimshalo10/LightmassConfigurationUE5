@@ -34,11 +34,15 @@ Simply download [LightmassConfigurationUE5](https://github.com/jimshalo10/Lightm
 Download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
 If you use Windows Explorer decompress. Right click on the file in Downloads directory "LightmassConfigurationUE5-master.zip" Select "Properties"
 
-In the new box at the botto tick the box marked "Unblock", the click "Apply" then click "Ok"
+After decompression
+
+In the new box at the bottom tick the box marked "Unblock", the click "Apply" then click "Ok"
 
  
+- On LightmassConfigurator.bat, Right Click and select "Run as Administrator" it will ask for admin permissions and do the rest, including downloading GPU Lightmass to the proper folder, prompting you each step of the way.
 
-- On LightmassConfigurator.bat, Right Click and select "Run as Administrator" it will ask for admin permissions and do the rest, including downloading GPU Lightmass to the proper folder, prompting you each step of the way. If you have a Windows Defender error, or permission error it means you have not selected "Run as Administrator"
+- If you have a Windows Defender error, or permission error it means you have not selected "Unblock" delete the file "LightmassConfigurationUE5-master.zip" and start again, following the Window Explorer decompression to unblock the zip file.
+  
 
 
 original Unreal 4-
