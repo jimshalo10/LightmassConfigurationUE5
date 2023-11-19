@@ -25,6 +25,7 @@ To use:
 
 Unreal 5.3
 Win RAR decompressor
+
 Simply download [LightmassConfigurationUE5](https://github.com/jimshalo10/LightmassConfigurationUE5/archive/refs/heads/master.zip)
 
 Windows Explorer decompressor (more complex)
