@@ -1,4 +1,5 @@
-@ECHO one
+@ECHO OFF
+
 SETLOCAL EnableExtensions ENABLEDELAYEDEXPANSION
 
 :Variables
