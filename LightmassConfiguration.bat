@@ -160,9 +160,9 @@ FOR /F "tokens=1*" %%a IN ('wmic path win32_VideoController get driverVersion^,N
 SET _DRIVER=%_DRIVER:.=%
 IF DEFINED _DRIVER (
 	IF "%_DRIVER%" GEQ "%iMinDriverVersion%" (
-		ECHO %mINFO%%cGREEN%Nvidia Driver version is %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% or greater ^(GOOD^)%cReset%
+		ECHO %mINFO%%cGREEN%Nvidia Driver version is minimum %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% or greater ^(GOOD^)%cReset%
 	) ELSE (
-		ECHO %mINFO%%cGREEN%Nvidia Driver version is %_DRIVER:~5,3%.%_DRIVER:~8,2% %cReset%
+		ECHO %mINFO%%cGREEN%Nvidia Driver version is below %_DRIVER:~5,3%.%_DRIVER:~8,2% %cReset%
 		ECHO %mERROR%%cRED%NVIDIA DRIVER NEEDS TO BE UPDATED TO %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% OR GREATER TO USE GPU LIGHTMASS.%cReset%
 		ECHO.
 		TIMEOUT 5
