@@ -19,7 +19,12 @@
 7za.exe
 7-zip.chm
 readme.txt
+license.txt
+
+# Visual Studio internal
+
 .vs/
+# downloads of this code
 GPULightmass-UE4.26.2-release.zip
 LightmassConfigurationV4x-master.zip
 LightmassConfigurationUE5.zip
