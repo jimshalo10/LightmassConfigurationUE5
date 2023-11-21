@@ -158,6 +158,8 @@ ECHO.
 wmic path win32_VideoController get driverVersion,Name
 FOR /F "tokens=1*" %%a IN ('wmic path win32_VideoController get driverVersion^,Name ^| find "NVIDIA"') DO (SET _DRIVER=%%a)
 SET _DRIVER=%_DRIVER:.=%
+echo %iMinDriverVersion%
+
 IF DEFINED _DRIVER (
 	IF "%_DRIVER%" GEQ "%iMinDriverVersion%" (
 		ECHO %mINFO%%cGREEN%Nvidia Driver version is minimum %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% or greater ^(GOOD^)%cReset%
