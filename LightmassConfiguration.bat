@@ -64,7 +64,7 @@ REM Remove dots from Version Variable
 set uVersion=%UnrealVersion:.=% 
 
 If %uVersion% GTR 420 (
-	set iMinDriverVersion=%iMinDriverVersion_521%
+	set iMinDriverVersion=%iMinDriverVersion_421%
 ) ELSE (
 	set iMinDriverVersion=%iMinDriverVersion_421%
 )
@@ -95,6 +95,8 @@ set VALUE_NAME_TDR=TdrDelay
 :MAIN
 CALL :UAC
 CALL :HEADER
+echo wait after HEADER
+pause
 CALL :TDRDELAY
 CALL :7Z
 CALL :CHECKRUNNING
