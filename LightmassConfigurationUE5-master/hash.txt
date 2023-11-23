@@ -1,0 +1,89 @@
+UnrealVersion=4.19 
+4.19:UE4Editor-UnrealEd.dll:CPU:a024c52cfddb8ed7d4409c1b276343cc 
+ 
+UnrealVersion=4.20 
+4.20.2:UE4Editor-UnrealEd.dll:CPU:9701ff972fba9bb250b7085f016069a6
+ 
+UnrealVersion=4.19.1 
+4.19.1:UE4Editor-UnrealEd.dll:GPU:d5789ceabb44114a7f8d96d9b091ca43
+4.19.1:GPULightmassKernel.dll:FastPreview:06524fe7cefbc81266145e7735b14dcf
+4.19.1:GPULightmassKernel.dll:MediumQuality:70c26ccb4c5a3d925bfa3a2f259a8374
+4.19.1:GPULightmassKernel.dll:UltraHigh:e5d0a73cd8e7c30469dc781ea9db66c6
+ 
+UnrealVersion=4.19.2 
+ 
+4.19.2:UE4Editor-UnrealEd.dll:GPU:5444c3b33cbe81aece57012dc3529a7f
+4.19.2:GPULightmassKernel.dll:FastPreview:06524fe7cefbc81266145e7735b14dcf [DUPLICATE:[10]
+4.19.2:GPULightmassKernel.dll:MediumQuality:70c26ccb4c5a3d925bfa3a2f259a8374 [DUPLICATE:[11]
+4.19.2:GPULightmassKernel.dll:UltraHigh:e5d0a73cd8e7c30469dc781ea9db66c6 [DUPLICATE:[12]
+ 
+UnrealVersion=4.20.1 
+4.20.1:UE4Editor-UnrealEd.dll:GPU:4b8ac44664a87b3e922ad9a77d4d0a69
+4.20.1:GPULightmassKernel.dll:Extreme:b0e792aa6a302325bf9a0e0e8a14492a
+4.20.1:GPULightmassKernel.dll:FastPreview:aa8b5b8d6d59ba1c1e5807dc71cf081d
+4.20.1:GPULightmassKernel.dll:MediumQuality:43966b9276f0cda12770201bf3271bb8
+4.20.1:GPULightmassKernel.dll:UltraHigh:bc1e71019dc6074ea31099f692a94118
+ 
+UnrealVersion=4.20.2 
+4.20.2:UE4Editor-UnrealEd.dll:GPU:dcb8f8c59d98eb7b3520db82af0a3ae0
+4.20.2:UE4Editor-UnrealEd.dll:GPU:e3a464b9b128225ddbdf3f87537d6de0 [Unified]
+4.20.2:GPULightmassKernel.dll:Extreme:77f574ffa01ce22c7fc8f13b94bcecb4
+4.20.2:GPULightmassKernel.dll:FastPreview:25c38c2052830cb45808649246f517eb
+4.20.2:GPULightmassKernel.dll:MediumQuality:d009fbaa625c6a704e5f687cd5d2595d
+4.20.2:GPULightmassKernel.dll:UltraHigh:5807710abb9ba36099e2765e4fd30559
+
+UnrealVersion=4.20.3
+4.20.3:UE4Editor-UnrealEd.dll:CPU:32d1dafa387f085ba8f1238542ae6fea
+4.20.3:UE4Editor-UnrealEd.dll:GPU:f5d9c567f582b132309dbdecddb5c124 [Unified]
+4.20.3:UE4Editor-UnrealEd.dll:GPU:3305387b26a79e3c81f7dfbc9998e554 [Unified]
+4.20.3:GPULightmassKernel.dll:Unified:1d6a18bad15f183a5234a1660e08c107
+
+UnrealVersion=4.21
+4.21:UE4Editor-UnrealEd.dll:CPU:717881c0f2aeb78a2baa9516cf3c019d 
+4.21:UE4Editor-UnrealEd.dll:GPU:3860bc7630b3089e9ee1c8a15c02a863 [Unified]
+4.21:GPULightmassKernel.dll:Unified:9320925a8e2c5d81c24ab570c7c75ae6
+
+UnrealVersion=4.22
+4.22:UE4Editor-UnrealEd.dll:CPU:0b98aa6bf871c7bebdd4ecad745f9fb6 
+4.22:UE4Editor-UnrealEd.dll:GPU:8a9e5224ffe76bc1008caa9bfd34ff15 [Unified]
+4.22:GPULightmassKernel.dll:Unified:a3f8184978952b1d34f47ba2a015b9ef
+
+UnrealVersion=4.22.2
+4.22.2:UE4Editor-UnrealEd.dll:CPU:8b4ce7b30d63409d8740ee52e393e9d5
+
+UnrealVersion=4.22.3
+4.22.3:UE4Editor-UnrealEd.dll:CPU:74dd6c5c32443deb1626d1f9b88addad 
+
+UnrealVersion=4.23
+4.23:UE4Editor-UnrealEd.dll:GPU:e50815c00a7b944164471c5ef15d9497 [Unified]
+4.23:GPULightmassKernel.dll:Unified:17aeedf6c40bbc722bb79676f826fe97 
+ 
+UnrealVersion=4.23.1
+4.23.1:UE4Editor-UnrealEd.dll:CPU:090bd883b3c0c58d115aa58d7421b93b 
+4.23.1:UE4Editor-UnrealEd.dll:GPU:dacccda26d6f46301e5039af5f6287c2 [Unified]
+
+UnrealVersion=4.24
+4.24:UE4Editor-UnrealEd.dll:CPU:e0620e001126655e4ea60eb5020081e8
+4.24:UE4Editor-UnrealEd.dll:GPU:810ddc8bc05f8527a70ded6c5211c700 [Unified]
+
+UnrealVersion=4.24.1
+4.24.1:UE4Editor-UnrealEd.dll:CPU:f401346f2720e26dfbaf3866b767d97e
+4.24.1:UE4Editor-UnrealEd.dll:GPU:60da525a7de6350758e0d81a2893a1d6 [Unified]
+
+UnrealVersion=4.24.3
+4.24.3:UE4Editor-UnrealEd.dll:CPU:3f5fee308af0fda374e7f6bbc5f0cc79 
+4.24.3:UE4Editor-UnrealEd.dll:GPU:aa218a5284d3c22604d78916b4820d73 [Unified]
+
+UnrealVersion=4.25.4
+4.25.4:UE4Editor-UnrealEd.dll:CPU:a6727aef3fc26c449d43f63d92a1f9c0
+4.25.4:UE4Editor-UnrealEd.dll:GPU:d58ad0283f025d26fc36fcb434eae848 [Unified]
+
+UnrealVersion=4.26.1 
+ 
+4.26.1:UE4Editor-UnrealEd.dll:CPU:7f1efbf7bf56b6682086bdace909b893 
+4.26.1:UE4Editor-UnrealEd.dll:GPU:3d467e94f951fa2c70dde1d3b3fa23cb [Unified]
+ 
+UnrealVersion=4.26.2 
+ 
+4.26.2:UE4Editor-UnrealEd.dll:CPU:fcb19771c1d77af4b4f228a23359ac82 
+4.26.2:UE4Editor-UnrealEd.dll:GPU:07d3fb0171e42b305bdb3e174f1a5368 [Unified]

@@ -1,4 +1,5 @@
 @ECHO OFF
+
 SETLOCAL EnableExtensions ENABLEDELAYEDEXPANSION
 
 :Variables
@@ -6,16 +7,11 @@ REM **** Variables that can be modified bellow ****
 REM VARIABLE: UnrealVersion. You can choose your version if you have more than one installed 
 REM or want to target an specific release. Supported versions starts with UE 4.24 and up to 4.26 so far.
 REM Defaul is: set UnrealVersion=4.24.
-rem set UnrealVersion=4.26
-
-REM Unreal 5
-REM VARIABLE: UnrealVersion. You can choose your version if you have more than one installed 
-REM or want to target an specific release. Supported versions starts with UE 5.3.1
-SET UnrealVersion=5.3
-
+set UnrealVersion=5.3
 
 REM VARIABLE: pUnified. The name of the file that's going to be downloaded for this version
-
+REM DEFAULT: For UnrealEngine 4.* set pUnified=GPULightmass-UE4.24.1.zip
+REM Unreal 5
 set pUnified=GPULightmass-5-3-BIN-patch.zip
 
 REM Download URLS can be modified. This URLs contian the GPU Lightmass for a particular version.
@@ -27,8 +23,8 @@ set uGPULightmass4254u=https://dl.orangedox.com/7fPK2NJ1Jmx3s8Gtv5?dl=1
 set uGPULightmass426u=https://dl.orangedox.com/KAsDFVpPgoRHoXXtsJ?dl=1
 set uGPULightmass4261u=https://dl.orangedox.com/RiBB5lkdyBuxsXJpNH?dl=1
 set uGPULightmass4262u=https://dl.orangedox.com/6wS2UhrnsHeFEsZAIp?dl=1
-
-set uGPULightmass=https://github.com/jimshalo10/GPULightmass-5-3-1-BIN-patch/archive/refs/heads/GPULightmass-5-3-BIN-patch.zip
+set uGPULightmass=%uGPULightmass4262u%
+REM
 
 REM TDR Settings
 set iTDRValue=300
@@ -56,11 +52,13 @@ REM ...................................................................
 REM DO NOT CHANGE ANYTHING FROM HERE UNLESS YOU KNOW WHAT YOU ARE DOING
 REM ...................................................................
 REM 
-set sScriptVersion=v0.3.4
+REM set sScriptVersion=v0.3.4 was last Unreal Engine 4
+REM Unreal 5 sScriptVersion=v0.3.5
+set sScriptVersion=v0.3.5
 REM 4.20 requires NVIDIA DRIVER VERSION 398.26 or later required. 
 set iMinDriverVersion_420=2421139826
 REM 4.21 requires NVIDIA DRIVER VERSION 411.31 or later required. 
-set iMinDriverVersion_421=2421141131
+set iMinDriverVersion_521=2421141131
 
 REM Remove dots from Version Variable
 set uVersion=%UnrealVersion:.=% 
@@ -83,7 +81,7 @@ SET cGREEN=[32m
 SET cSOFT=[90m
 SET cYellow=[93m
 SET cInverted=[7m
-
+REM WRONG!!!! below
 SET pUnrealEd=\Engine\Binaries\Win64\UE4Editor-UnrealEd.dll
 SET pGPULightmass=\Engine\Binaries\Win64\GPULightmassKernel.dll
 
@@ -97,11 +95,13 @@ set VALUE_NAME_TDR=TdrDelay
 :MAIN
 CALL :UAC
 CALL :HEADER
+echo wait after HEADER
+pause
 CALL :TDRDELAY
 CALL :7Z
 CALL :CHECKRUNNING
 CALL :SETUP
-IF !EPICERROR! EQU 1 GOTO :EXIT
+REM IF !EPICERROR! EQU 1 GOTO :EXIT
 CALL :MENU
 GOTO :EXIT
 
@@ -140,13 +140,6 @@ if '%errorlevel%' NEQ '0' (
 Exit /B
 
 :7z
-ECHO on
-Del/Q 7za.exe
-del/q 7-zip.chm
-del/q license.txt
-del/q readme.txt
-ECHO OFF
-
 IF NOT EXIST 7za.exe (
 	ECHO %mINFO%Downloading 7zip
 	powershell -Command "Invoke-WebRequest %u7ZIP% -OutFile 7za.zip"
@@ -167,12 +160,13 @@ ECHO.
 wmic path win32_VideoController get driverVersion,Name
 FOR /F "tokens=1*" %%a IN ('wmic path win32_VideoController get driverVersion^,Name ^| find "NVIDIA"') DO (SET _DRIVER=%%a)
 SET _DRIVER=%_DRIVER:.=%
-ECHO %iMinDriverVersion:~5,3% thats how its means to be
+echo %iMinDriverVersion%
+
 IF DEFINED _DRIVER (
 	IF "%_DRIVER%" GEQ "%iMinDriverVersion%" (
-		ECHO %mINFO%%cGREEN%Nvidia Driver version is %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% or greater ^(GOOD^)%cReset%
+		ECHO %mINFO%%cGREEN%Nvidia Driver version is minimum %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% or greater ^(GOOD^)%cReset%
 	) ELSE (
-		ECHO %mINFO%%cGREEN%Nvidia Driver version is %_DRIVER:~5,3%.%_DRIVER:~8,2% %cReset%
+		ECHO %mINFO%%cGREEN%Nvidia Driver version is below %_DRIVER:~5,3%.%_DRIVER:~8,2% %cReset%
 		ECHO %mERROR%%cRED%NVIDIA DRIVER NEEDS TO BE UPDATED TO %iMinDriverVersion:~5,3%.%iMinDriverVersion:~8,2% OR GREATER TO USE GPU LIGHTMASS.%cReset%
 		ECHO.
 		TIMEOUT 5
@@ -184,7 +178,7 @@ IF DEFINED _DRIVER (
 EXIT /B
 
 :SETUP
-REM GET THE FOLDER WHERE UE4 WAS INSTALLED
+REM GET THE FOLDER WHERE UE5 WAS INSTALLED
 FOR /F "tokens=2*" %%A IN ('REG.exe query "%KEY_NAME%" /v "%VALUE_NAME%" 2^>nul') DO (set pInstallDir=%%B)
 IF NOT DEFINED pInstallDir (
 	echo %mERROR%%cRED%Unreal Engine Version %UnrealVersion% Not Installed or registry not set... %cReset%
@@ -195,7 +189,7 @@ IF NOT DEFINED pInstallDir (
 )
 echo %mINFO%[1mUnreal Engine Version %UnrealVersion% is installed in: %cReset%
 echo      - !pInstallDir!
-
+pause
 REM CHECK IF GPU LIGHTMASS IS INSTALLED
 IF EXIST !pInstallDir!!pGPULightmass! (
 	ECHO %mINFO%%cGREEN%GPU Lightmass is Installed%cReset%
@@ -204,7 +198,7 @@ IF EXIST !pInstallDir!!pGPULightmass! (
 	ECHO %mINFO%%cRED%GPU Lightmass is NOT Installed%cReset%
 	SET NOTINSTALLED=1
 )
-
+pause
 REM CHECK FOR BACKUP
 IF EXIST CPULightmass-%UnrealVersion%.zip (
 	ECHO %mINFO%%cGREEN%CPU Lightmass is BACKED UP%cReset%
@@ -215,7 +209,7 @@ IF EXIST CPULightmass-%UnrealVersion%.zip (
 	SET BACKED=0
 	CALL :BACKUP
 )
-
+pause
 REM CHECK FOR SETUP FILES
 IF NOT EXIST !pUnified! (
 	ECHO Downloading GPU Lightmass, this can take a while. Please wait...
@@ -228,10 +222,10 @@ IF NOT EXIST !pUnified! (
 	ECHO %mINFO%%cGREEN%GPULightmass is already downloaded.%cReset%
 )
 EXIT /B 0
-
+pause
 :CHECKRUNNING
-REM DETECT IF UNREAL IS RUNNING
-tasklist /FI "IMAGENAME eq UE4Editor.exe" | find /I /N "UE4Editor.exe">NUL
+REM DETECT IF UNREAL 5  IS RUNNING UnrealVersion 5 IS UnrealEditor.exe UnrealVersion 4 WAS "UE4Editor.exe"
+tasklist /FI "IMAGENAME eq UnrealEditor.exe" | find /I /N "UnrealEditor.exe">NUL
 if !ERRORLEVEL! EQU 0 (
 echo %mWARN%Unreal Editor is running. GPU INSTALL NOT POSSIBLE if not installed already.
 SET RUNNING=1
@@ -239,7 +233,7 @@ SET RUNNING=1
 echo %mINFO%%cGREEN%Unreal Editor is NOT running. *GOOD*%cReset%
 )
 EXIT /B 0
-
+pause 
 :BACKUP
 IF EXIST !pInstallDir!\Engine\Binaries\DotNET\ProgressReporter.exe (
 	ECHO.
@@ -248,6 +242,9 @@ IF EXIST !pInstallDir!\Engine\Binaries\DotNET\ProgressReporter.exe (
 	CHOICE /m "Do you want to force backup anyway? (Useful if you just updated Unreal and had GPULightmass installed)."
 	IF !ERRORLEVEL! EQU 1 (GOTO :FORCED) ELSE (EXIT /B 1)
 )
+REM Unreal 5 this wont work on UNREAL 5 EXIT NOW
+EXIT /B 0
+
 GOTO :BACKINGUP
 :FORCED
 ECHO Performing FORCED BACKUP...
@@ -397,18 +394,6 @@ EXIT /B
 explorer %pInstallDir%
 EXIT /B
 
-:CPU
-ECHO CPU Lightmass Install
-ECHO.
-IF EXIST set CPULightmass-%UnrealVersion%.zip (
-	ECHO Cleaning up %UnrealVersion% of old GPU Lightmass Files
-	SET InstallVersion=CPULightmass-%UnrealVersion%.zip
-	del "!pInstallDir!\Engine\Binaries\DotNET\ProgressReporter.exe"
-	del "!pInstallDir!\Engine\Binaries\Win64\GPULightmassKernel.dll"
-	GOTO INSTALL
-)
-ECHO %mERROR%%cRED%Can't find %InstallVersion%. CPU Lightmass won't be restored.%cReset%
-EXIT /B
 
 :INSTALL
 IF !NOTINSTALLED! EQU 1 (
@@ -488,34 +473,6 @@ REM IF !_ENGINE!==!UnrealVersion! (ECHO TEST OK) ELSE (ECHO DIRTY INSTALL, ENGIN
 
 EXIT /B
 
-:Test
-SET "_HASH="
-SET "_ENGINE="
-SET "_QUALITY="
-SET "_FOUND="
-SET "_EDITOR="
-SET "_GPU="
-IF NOT EXIST !pFileToCheck! ECHO %mERROR%!pFileToCheck! does not exist && EXIT /B 1
-ECHO.
-REM ECHO HASHING !pFileToCheck!...
-FOR /F "tokens=*" %%a IN ('certutil -hashfile "!pFileToCheck!" MD5 ^| find /i /v "md5" ^| find /i /v "certutil"') DO (SET _HASH=%%a)
-REM ECHO TESTING TOKENS for hash: !_HASH!
-IF DEFINED _HASH (
-	FOR /F "skip=2 tokens=*" %%a IN ('find "!_HASH!" hash.txt') DO (SET _FOUND=%%a)
-	if DEFINED _FOUND (
-		REM ECHO FOUND: !_FOUND!
-		FOR /F "tokens=1-4* delims=:" %%g IN ("!_FOUND!") DO (
-			SET _ENGINE=%%g
-			IF %%h==UE4Editor-UnrealEd.dll (SET _EDITOR=!_ENGINE: =!)
-			IF %%h==GPULightmassKernel.dll (SET _GPU=!_ENGINE: =!)
-			IF [%%j]==[] (SET _QUALITY=CPU) ELSE (SET _QUALITY=%%i)
-			SET _QUALITY=!_QUALITY: =!
-		)
-	)
-) ELSE (
-	REM ECHO !pFileToCheck!: FILE NOT FOUND
-)
-EXIT /B
 
 :WONTINSTALL
 ECHO %mERROR%%cRED%Can't install GPU if Unreal is running. Quit Unreal and install.%cReset%
@@ -525,4 +482,5 @@ EXIT /B 1
 ECHO.
 ECHO ALL DONE. Have a good day!
 TIMEOUT 3 >nul
+pause 
 EXIT /B 0

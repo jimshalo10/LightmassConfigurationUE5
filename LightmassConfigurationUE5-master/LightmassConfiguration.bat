@@ -6,17 +6,11 @@ REM **** Variables that can be modified bellow ****
 REM VARIABLE: UnrealVersion. You can choose your version if you have more than one installed 
 REM or want to target an specific release. Supported versions starts with UE 4.24 and up to 4.26 so far.
 REM Defaul is: set UnrealVersion=4.24.
-rem set UnrealVersion=4.26
-
-REM Unreal 5
-REM VARIABLE: UnrealVersion. You can choose your version if you have more than one installed 
-REM or want to target an specific release. Supported versions starts with UE 5.3.1
-SET UnrealVersion=5.3
-
+set UnrealVersion=4.26
 
 REM VARIABLE: pUnified. The name of the file that's going to be downloaded for this version
-
-set pUnified=GPULightmass-5-3-BIN-patch.zip
+REM DEFAULT: set pUnified=GPULightmass-UE4.24.1.zip
+set pUnified=GPULightmass-UE4.26.2-release.zip
 
 REM Download URLS can be modified. This URLs contian the GPU Lightmass for a particular version.
 set u7ZIP=https://www.7-zip.org/a/7za920.zip
@@ -27,8 +21,7 @@ set uGPULightmass4254u=https://dl.orangedox.com/7fPK2NJ1Jmx3s8Gtv5?dl=1
 set uGPULightmass426u=https://dl.orangedox.com/KAsDFVpPgoRHoXXtsJ?dl=1
 set uGPULightmass4261u=https://dl.orangedox.com/RiBB5lkdyBuxsXJpNH?dl=1
 set uGPULightmass4262u=https://dl.orangedox.com/6wS2UhrnsHeFEsZAIp?dl=1
-
-set uGPULightmass=https://github.com/jimshalo10/GPULightmass-5-3-1-BIN-patch/archive/refs/heads/GPULightmass-5-3-BIN-patch.zip
+set uGPULightmass=%uGPULightmass4262u%
 
 REM TDR Settings
 set iTDRValue=300
@@ -140,13 +133,6 @@ if '%errorlevel%' NEQ '0' (
 Exit /B
 
 :7z
-ECHO on
-Del/Q 7za.exe
-del/q 7-zip.chm
-del/q license.txt
-del/q readme.txt
-ECHO OFF
-
 IF NOT EXIST 7za.exe (
 	ECHO %mINFO%Downloading 7zip
 	powershell -Command "Invoke-WebRequest %u7ZIP% -OutFile 7za.zip"
