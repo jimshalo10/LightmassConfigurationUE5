@@ -1,3 +1,6 @@
+# Major bug found downloading error since 5.5.1 selection binary - Use original manual
+# WON'T WORK WINDOWS 11 5.3 TO 5.4 PROTECT ERROR 
+
 # LightmassConfiguration
 LightmassConfiguration is a script made for Unreal Engine 5 to allow to change from Unreal's CPU Lightmass to GPU Lightmass (made by Luoshuang for the Unreal Forums) and back. Since there are no options in GPU Lightmass, the script also allows anyone to change bake quality levels without the need to even restart Unreal Editor. 
 
